@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>For Rashi 💜</title>
+</head>
+<body>
+
+  <section class="letter-container">
+
+    <!-- Live Countdown -->
+    <div class="countup-box" id="live-countup">TOGETHER SINCE...</div>
+
+    <!-- Letter Box -->
+    <section class="letter-box">
+      <h2 class="header-script">To my Monica,</h2>
+      <div id="typed-message" class="typed-text"></div>
+    </section>
+  </section>
+
+  <script>
+    // ✅ Countdown
+    function updateCountup() {
+      const startDate = new Date("2024-10-12T00:00:00");
+      const now = new Date();
+      const diff = now - startDate;
+
+      const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44));
+      const weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7));
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = now.getHours();
+      const mins = now.getMinutes();
+
+      document.getElementById("live-countup").innerText =
+        `TOGETHER SINCE ${months} MONTHS, ${weeks} WEEKS, ${days} DAYS, ${hours} HRS, ${mins} MINS`;
+    }
+    setInterval(updateCountup, 60000);
+    updateCountup();
+
+    // ✅ Typing Animation (fixed)
+    const messageLines = [
+      "Could this BE any more your birthday?! 🎉",
+      "",
+      "Happy Birthday, My Lobster… I mean, My Monica 💗",
+      "",
+      "Okay, so I know I’ve said all this before — but kind of like Joey with sandwiches or Ross with dinosaurs, I just can’t stop repeating the good stuff. And YOU, my love, are the very best stuff.",
+      "",
+      "You’ve brought more love, laughter, and perfectly organized chaos into my life than I knew was possible. You’re the Monica to my Chandler — the one who keeps things together when I’m spiraling, who believes in me when I can’t find matching socks, and who makes the hard stuff feel softer just by being there. (Also, you're the only one allowed to yell at me for leaving toothpaste in the sink.)",
+      "",
+      "You are my person. My best friend. My “we don’t know how it happened, but it just did” kind of love. Honestly, I’m still shocked you picked me. But also, you’re stuck with me now, so good luck with that.",
+      "",
+      "You make life feel like Central Perk with extra whipped cream. Like a game of Bamboozled where we both win. Like a Thanksgiving dinner without the turkey on your head (although, I’d still love you with it on). You’re the reason I believe in soulmates — and spontaneous proposals with empty ring boxes.",
+      "",
+      "I crave everything about us:",
+      "The late-night snuggles, the “you’re annoying but I love you” bickering, the way you steal the blanket, your happy dances when dinner turns out great (which, let’s face it, is always). Every kiss, every glance, every sarcastic remark — I live for it.",
+      "",
+      "You are, without a doubt, the most beautiful human I’ve ever known — and not just in a \"you could be a soap opera star\" way, but in the \"I’d marry you in a Vegas chapel or a fancy New York loft\" kind of way. I’m your Chandler. Forever awkward. Forever devoted. Forever yours.",
+      "",
+      "So today, on your birthday, I just want you to know:",
+      "I love you more than Chandler loves sarcasm.",
+      "More than Monica loves label makers.",
+      "More than Joey loves food.",
+      "And definitely more than Ross loves saying, “We were on a break.”",
+      "",
+      "Happy Birthday, baby. You’re my home, my heart, my everything.",
+      "Now let’s eat cake — and possibly name it something ridiculous like Miss Frosting Von Sprinkleface.",
+      "",
+      "Forever yours,",
+      "Your Chandler (with the weirdest smile and the biggest heart) ❤️"
+    ];
+
+    const typedDiv = document.getElementById("typed-message");
+    let line = 0;
+    let char = 0;
+
+    function typeText() {
+      if (line < messageLines.length) {
+        if (char <= messageLines[line].length) {
+          typedDiv.innerHTML =
+            typedDiv.innerHTML.replace(/_$/, "") +
+            messageLines[line].charAt(char++) + "_";
+          setTimeout(typeText, 30);
+        } else {
+          typedDiv.innerHTML = typedDiv.innerHTML.replace(/_$/, "") + "<br>";
+          line++;
+          char = 0;
+          setTimeout(typeText, 400);
+        }
+      }
+    }
+
+    typeText();
+  </script>
+</body>
+</html>
