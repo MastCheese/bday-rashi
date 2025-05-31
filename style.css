@@ -1,85 +1,90 @@
+/* Reset & Base */
 body {
   margin: 0;
   padding: 0;
-  background-image: url("img/background.png");
+  font-family: "Times New Roman", Times, serif;
+  background-image: url('img/background.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  font-family: "Times New Roman", Times, serif;
+  color: black;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  scroll-behavior: smooth;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-/* Container for the whole letter box */
+/* Main Letter Box */
 .parent {
-  backdrop-filter: blur(15px);
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  padding: 30px 35px 40px;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  max-width: 800px;
   width: 90%;
-  max-width: 700px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  text-align: left;
-  line-height: 1.7;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 35px 30px 45px;
+  margin: 40px 0;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
-/* Countdown bar */
+/* Countdown Header */
 #countup {
-  display: inline-block;
-  background: #ffffff;
-  color: #000000;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 10px 22px;
-  border-radius: 10px;
-  margin: 0 auto 20px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  background: white;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
-/* Typing effect */
+/* Header Text */
 #monicaHeader {
   text-align: center;
-  font-weight: bold;
-  font-size: 22px;
+  color: #4b0082;
   font-style: italic;
-  color: #5e2c84;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  white-space: pre-line;
-  overflow-wrap: break-word;
-  animation: fadeIn 1s ease-in-out;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 25px;
+  min-height: 30px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Typing Paragraph */
+#letterText {
+  font-size: 17px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
-/* Responsive styling */
+/* Blinking Cursor Effect */
+#letterText::after {
+  content: '|';
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Responsive Design */
 @media (max-width: 600px) {
-  .parent {
-    padding: 20px;
-    margin: 30px 10px;
-  }
-
-  #countup {
-    font-size: 13px;
-    padding: 8px 16px;
+  #letterText {
+    font-size: 16px;
   }
 
   #monicaHeader {
-    font-size: 18px;
+    font-size: 20px;
+  }
+
+  .parent {
+    padding: 25px 20px 35px;
   }
 }
 
