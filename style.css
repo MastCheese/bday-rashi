@@ -1,3 +1,4 @@
+/* 🌸 Base Styling */
 body {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@ body {
   box-sizing: border-box;
 }
 
+/* 💌 Centered Layout */
 .letter-container {
   display: flex;
   flex-direction: column;
@@ -20,28 +22,33 @@ body {
   width: 100%;
 }
 
+/* ⏱ Countdown Styling */
 .countup-box {
   font-size: 15px;
   font-weight: 700;
-  background: #fff;
+  background: #ffffffcc;
   padding: 10px 18px;
   border-radius: 12px;
   margin-bottom: 18px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  color: black;
+  color: #111;
   text-align: center;
+  animation: fadeIn 1s ease-in-out both;
 }
 
+/* 💎 Letter Styling */
 .letter-box {
   backdrop-filter: blur(18px);
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.4);
   padding: 35px 28px;
   border-radius: 22px;
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.25);
   width: 100%;
   color: #111;
+  animation: fadeIn 1.2s ease-in-out both;
 }
 
+/* ✒️ Header Font */
 .header-script {
   font-weight: bold;
   font-style: italic;
@@ -51,6 +58,7 @@ body {
   color: #6a2aa8;
 }
 
+/* ⌨️ Typing Effect Text */
 .typed-text {
   font-size: 17px;
   font-weight: 400;
@@ -58,9 +66,34 @@ body {
   text-align: justify;
   white-space: pre-wrap;
   min-height: 200px;
+  animation: fadeIn 2s ease-in-out both;
 }
 
-/* Responsive */
+/* ✨ Optional blinking cursor effect */
+.typed-text::after {
+  content: "|";
+  animation: blink 1s infinite;
+  color: #6a2aa8;
+}
+
+/* 🧤 Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 📱 Mobile Optimization */
 @media (max-width: 600px) {
   .letter-box {
     padding: 25px 20px;
@@ -79,5 +112,6 @@ body {
     padding: 8px 14px;
   }
 }
+
 
 
