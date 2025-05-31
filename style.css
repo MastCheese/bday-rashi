@@ -1,90 +1,83 @@
-/* Reset & Base */
 body {
   margin: 0;
   padding: 0;
+  background: url("img/background.png") center/cover no-repeat fixed;
   font-family: "Times New Roman", Times, serif;
-  background-image: url('img/background.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: black;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
+  scroll-behavior: smooth;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.letter-container {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  max-width: 750px;
+  width: 100%;
 }
 
-/* Main Letter Box */
-.parent {
-  max-width: 800px;
-  width: 90%;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(14px);
-  border-radius: 18px;
-  padding: 35px 30px 45px;
-  margin: 40px 0;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-  position: relative;
-}
-
-/* Countdown Header */
-#countup {
-  text-align: center;
-  font-weight: bold;
-  background: white;
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 12px;
+.countup-box {
   font-size: 15px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-/* Header Text */
-#monicaHeader {
+  font-weight: 700;
+  background: #fff;
+  padding: 10px 18px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  color: black;
   text-align: center;
-  color: #4b0082;
+}
+
+.letter-box {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.35);
+  padding: 35px 28px;
+  border-radius: 22px;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  color: #111;
+}
+
+.header-script {
+  font-weight: bold;
   font-style: italic;
-  font-weight: 600;
-  font-size: 24px;
+  font-size: 26px;
+  text-align: center;
   margin-bottom: 25px;
-  min-height: 30px;
+  color: #6a2aa8;
 }
 
-/* Typing Paragraph */
-#letterText {
+.typed-text {
   font-size: 17px;
-  line-height: 1.6;
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: justify;
   white-space: pre-wrap;
-  word-wrap: break-word;
+  min-height: 200px;
 }
 
-/* Blinking Cursor Effect */
-#letterText::after {
-  content: '|';
-  animation: blink 1s infinite;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 600px) {
-  #letterText {
+  .letter-box {
+    padding: 25px 20px;
+  }
+
+  .header-script {
+    font-size: 22px;
+  }
+
+  .typed-text {
     font-size: 16px;
   }
 
-  #monicaHeader {
-    font-size: 20px;
-  }
-
-  .parent {
-    padding: 25px 20px 35px;
+  .countup-box {
+    font-size: 14px;
+    padding: 8px 14px;
   }
 }
+
 
