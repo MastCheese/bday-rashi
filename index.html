@@ -8,18 +8,20 @@
 </head>
 <body>
 
-  <section class="letter-container">
+  <!-- 💜 Background is handled in style.css -->
 
+  <section class="letter-container">
     <!-- Live Countdown -->
     <div class="countup-box" id="live-countup">TOGETHER SINCE...</div>
 
-    <!-- Letter Box -->
+    <!-- 💌 Letter -->
     <section class="letter-box">
       <h2 class="header-script">To my Monica,</h2>
       <div id="typed-message" class="typed-text"></div>
     </section>
   </section>
 
+  <!-- 🧠 Script -->
   <script>
     // ✅ Countdown
     function updateCountup() {
@@ -39,7 +41,7 @@
     setInterval(updateCountup, 60000);
     updateCountup();
 
-    // ✅ Typing Animation (fixed)
+    // ✅ Typing Animation
     const messageLines = [
       "Could this BE any more your birthday?! 🎉",
       "",
@@ -93,5 +95,6 @@
 
     typeText();
   </script>
+
 </body>
 </html>
